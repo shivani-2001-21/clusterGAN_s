@@ -1,0 +1,20 @@
+version: 2
+updates:
+  # Python dependencies (requirements.txt, setup.py, pyproject.toml)
+  - package-ecosystem: "pip"
+    directory: "/"          # root folder where requirements.txt and setup.py are
+    schedule:
+      interval: "weekly"    # check once per week
+    open-pull-requests-limit: 10
+
+  # GitHub Actions workflows (if you add them later in .github/workflows)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Dockerfile (if you add container support later)
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
